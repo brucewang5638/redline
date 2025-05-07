@@ -6,6 +6,7 @@ rootProject.name = "redline"
 // 基础设施层
 include("redline-infra:redline-db")
 findProject(":redline-infra:redline-db")?.name = "redline-db"
+include("redline-infra:redline-commons")
 
 // 领域核心层
 include("redline-core:redline-user")
