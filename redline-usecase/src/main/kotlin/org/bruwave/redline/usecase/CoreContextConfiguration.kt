@@ -1,6 +1,7 @@
 package org.bruwave.redline.usecase
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
+import org.springframework.boot.autoconfigure.domain.EntityScan
 import org.springframework.cache.annotation.EnableCaching
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
@@ -19,4 +20,14 @@ import org.springframework.context.annotation.Configuration
     ],
 )
 @EnableCaching
+@EnableJpaRepositories(
+    basePackages = [
+        "org.bruwave.redline.user",
+    ],
+)
+@EntityScan(
+    basePackages = [
+        "org.bruwave.redline.user",
+    ],
+)
 class CoreContextConfiguration
