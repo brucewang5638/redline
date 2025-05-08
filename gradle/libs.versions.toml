@@ -50,7 +50,7 @@ spring-expression = { module = "org.springframework:spring-expression", version.
 #spring-integration-core = { module = "org.springframework.integration:spring-integration-core", version.ref = "spring-integration" }
 
 # Spring Data
-#spring-data-jpa = { module = "org.springframework.data:spring-data-jpa", version.ref = "spring-boot" }
+spring-data-jpa = { module = "org.springframework.data:spring-data-jpa", version.ref = "spring-boot" }
 #spring-data-commons = { module = "org.springframework.data:spring-data-commons", version.ref = "spring-boot" }
 
 # json
