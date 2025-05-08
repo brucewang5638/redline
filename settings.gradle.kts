@@ -7,6 +7,7 @@ rootProject.name = "redline"
 include("redline-infra:redline-db")
 findProject(":redline-infra:redline-db")?.name = "redline-db"
 include("redline-infra:redline-commons")
+findProject(":redline-infra:redline-commons")?.name = "redline-commons"
 
 // 领域核心层
 include("redline-core:redline-user")
@@ -30,3 +31,4 @@ include("redline-server")
 
 // 页面
 include("redline-webapp")
+include("redline-usecase:redline-usecase-commons")

@@ -2,15 +2,25 @@ package org.bruwave.redline.portal.web.user
 
 import org.bruwave.redline.portal.web.api.UserApi
 import org.bruwave.redline.portal.web.model.BasicUserVO
+import org.bruwave.redline.usecase.user.UserService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RestController
-import java.time.Instant
 
 @RestController
-class UserController : UserApi {
+class UserController(
+    private val userService: UserService
+) : UserApi {
 
     override fun listUsers(): ResponseEntity<List<BasicUserVO>> {
-        val users = listOf(BasicUserVO(0, "test", "测试用户", Instant.now().toEpochMilli()))
-        return ResponseEntity.ok(users)
+        val users = userService.listUsers()
+        val userVOS = users.map { user ->
+            BasicUserVO(
+                user.id,
+                user.name,
+                user.nick,
+                user.createdAt.toEpochMilli()
+            )
+        }
+        return ResponseEntity.ok(userVOS)
     }
 }
