@@ -11,6 +11,7 @@ repositories {
 }
 
 dependencies {
-    implementation(libsFun.findLibrary("spring-boot-starter-data-jpa").orElseThrow(::AssertionError))
-    implementation(libsFun.findLibrary("spring-boot-starter-validation").orElseThrow(::AssertionError))
+    implementation(libsFun.findLibrary("spring-data-commons").orElseThrow(::AssertionError))
+    implementation(libsFun.findLibrary("hibernate").orElseThrow(::AssertionError))
+    implementation(libsFun.findLibrary("jakarta-validation").orElseThrow(::AssertionError))
 }

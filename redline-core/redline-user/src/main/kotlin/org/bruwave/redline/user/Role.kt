@@ -4,6 +4,7 @@ import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
+import jakarta.persistence.ManyToMany
 import jakarta.persistence.Table
 import jakarta.persistence.UniqueConstraint
 import jakarta.validation.constraints.NotBlank
@@ -12,6 +13,7 @@ import jakarta.validation.constraints.Pattern
 import jakarta.validation.constraints.Size
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.UpdateTimestamp
+import org.springframework.data.domain.AbstractAggregateRoot
 import java.time.Instant
 
 @Entity
@@ -29,7 +31,7 @@ class Role(
     )
     @field:Size(min = 5, max = 50, message = "Name must be between 1 and 50 characters")
     val name: String
-) {
+): AbstractAggregateRoot<Role>() {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0
@@ -37,6 +39,7 @@ class Role(
     var label: String = name
         private set
 
+    @ManyToMany
     val permissions = mutableSetOf<Permission>()
 
     @CreationTimestamp
@@ -47,12 +50,6 @@ class Role(
     @NotNull
     var updatedAt: Instant = Instant.EPOCH
         private set
-
-    data class Permission(
-        val name: String,
-        val label: String,
-        val description: String
-    )
 
     fun updateProfile(label: String) {
         this.label = label

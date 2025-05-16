@@ -1,7 +1,11 @@
 spring:
   datasource:
-    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:godeye}
-    username: ${POSTGRES_USER:godeye}
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:redline}
+    username: ${POSTGRES_USER:redline}
     password: ${POSTGRES_PASSWORD:123ABCdef*}
     hikari:
       transaction-isolation: TRANSACTION_REPEATABLE_READ
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
