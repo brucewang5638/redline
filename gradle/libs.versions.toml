@@ -12,7 +12,10 @@ jsonschema-validator = "1.5.6"
 jsonschema2pojo = "1.2.2"
 openapi-generator = "7.12.0"
 ktlint = "12.2.0"
-#swagger = "2.2.25"
+postgresql = "42.7.5"
+hibernate = "6.6.2.Final"
+jakarta-validation = "3.1.0"
+swagger = "2.2.25"
 springdoc-openapi-ui = "2.8.5"
 
 [plugins]
@@ -50,8 +53,11 @@ spring-expression = { module = "org.springframework:spring-expression", version.
 #spring-integration-core = { module = "org.springframework.integration:spring-integration-core", version.ref = "spring-integration" }
 
 # Spring Data
-#spring-data-jpa = { module = "org.springframework.data:spring-data-jpa", version.ref = "spring-boot" }
-#spring-data-commons = { module = "org.springframework.data:spring-data-commons", version.ref = "spring-boot" }
+spring-data-jpa = { module = "org.springframework.data:spring-data-jpa", version.ref = "spring-boot" }
+spring-data-commons = { module = "org.springframework.data:spring-data-commons", version.ref = "spring-boot" }
+
+# Hibernate
+hibernate = { module = "org.hibernate:hibernate-core", version.ref = "hibernate" }
 
 # json
 jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
@@ -62,5 +68,7 @@ jsonschema-validator = { module = "com.networknt:json-schema-validator", version
 
 # Others
 netty = { module = "io.netty:netty-all", version.ref = "netty" }
-#swagger-annotations = { module = "io.swagger.core.v3:swagger-annotations", version.ref = "swagger" }
+swagger-annotations = { module = "io.swagger.core.v3:swagger-annotations", version.ref = "swagger" }
 springdoc-openapi-webmvc-ui = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "springdoc-openapi-ui" }
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
+jakarta-validation = { module = "jakarta.validation:jakarta.validation-api", version.ref = "jakarta-validation" }

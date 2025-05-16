@@ -1,11 +1,11 @@
 val libsFun = versionCatalogs.named("libs")
 
 group = "org.bruwave.redline"
-version = libsFun.findVersion("redline")
+version = libsFun.findVersion("redline").orElseThrow(::AssertionError)
 
 plugins {
     id("org.springframework.boot")
-    id("io.spring.dependency-management")
+//    id("io.spring.dependency-management")
     kotlin("jvm")
     kotlin("plugin.spring")
     id("org.jlleitschuh.gradle.ktlint")

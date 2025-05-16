@@ -6,7 +6,9 @@ plugins {
 dependencies {
     api(libs.spring.boot.starter.web)
     implementation(libs.spring.boot.starter.validation)
+//    implementation(libs.swagger.annotations)
     implementation(libs.springdoc.openapi.webmvc.ui)
+    implementation(project(":redline-usecase"))
 }
 
 openApiGenerate {
