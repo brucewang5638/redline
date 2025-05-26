@@ -15,6 +15,7 @@ findProject(":redline-core:redline-user")?.name = "redline-user"
 
 // 服务层
 include("redline-usecase")
+include("redline-usecase:redline-usecase-commons")
 include("redline-usecase:redline-usecase-user")
 findProject(":redline-usecase:redline-usecase-user")?.name = "redline-usecase-user"
 
@@ -31,4 +32,5 @@ include("redline-server")
 
 // 页面
 include("redline-webapp")
-include("redline-usecase:redline-usecase-commons")
+include("redline-webapp-nextjs")
+include("redline-webapp-react")
