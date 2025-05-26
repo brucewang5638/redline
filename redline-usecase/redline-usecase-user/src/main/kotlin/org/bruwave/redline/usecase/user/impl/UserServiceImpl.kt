@@ -23,7 +23,21 @@ class UserServiceImpl(
     }
 
     override fun getUser(id: Long): UserTO {
-        TODO("Not yet implemented")
+        val user = userRepository.findById(id)
+            .orElseThrow { RuntimeException("User with id $id not found") }
+
+        return UserTO(
+            id = user.id,
+            name = user.name,
+            nick = user.nick,
+            sex = user.sex.name,
+            age = user.age,
+            roles = user.roles.map { it.name },
+            enabled = user.enabled,
+            locked = user.locked,
+            createdAt = user.createdAt,
+            updatedAt = user.updatedAt
+        )
     }
 
     override fun getUser(name: String): UserTO {
