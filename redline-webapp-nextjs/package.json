@@ -1,0 +1,32 @@
+{
+  "name": "redline-webapp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "generate": "openapi-generator-cli generate -i ../redline-protal/redline-protal-web/src/main/resources/static/openapi.yaml -g typescript-nestjs -o app/core/openapi --additional-properties fileNaming=kebab-case,withInterfaces=true --generate-alias-as-model"
+  },
+  "dependencies": {
+    "@ant-design/cssinjs": "^1.23.0",
+    "@ant-design/nextjs-registry": "^1.0.2",
+    "antd": "^5.25.2",
+    "next": "^15.1.8",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.8",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
