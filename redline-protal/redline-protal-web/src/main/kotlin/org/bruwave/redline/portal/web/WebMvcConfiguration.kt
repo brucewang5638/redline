@@ -1,11 +1,11 @@
-//package org.bruwave.redline.portal.web
+// package org.bruwave.redline.portal.web
 //
-//import org.springframework.context.annotation.Configuration
-//import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
-//import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
+// import org.springframework.context.annotation.Configuration
+// import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
+// import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 //
-//@Configuration
-//class WebMvcConfiguration : WebMvcConfigurer {
+// @Configuration
+// class WebMvcConfiguration : WebMvcConfigurer {
 //    override fun addResourceHandlers(registry: ResourceHandlerRegistry) {
 //        registry
 //            .addResourceHandler("/**")
@@ -14,4 +14,5 @@
 //                "classpath:/public/",
 //            )
 //    }
-//}
+// }
+class WebMvcConfiguration
