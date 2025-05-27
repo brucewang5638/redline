@@ -1,14 +1,14 @@
-//package org.bruwave.redline.portal.web.springdoc
+// package org.bruwave.redline.portal.web.springdoc
 //
-//import org.bruwave.redline.portal.web.invoker.SpringDocConfiguration
-//import org.springdoc.core.properties.SpringDocConfigProperties
-//import org.springdoc.core.providers.ObjectMapperProvider
-//import org.springframework.context.annotation.Bean
-//import org.springframework.context.annotation.Configuration
+// import org.bruwave.redline.portal.web.invoker.SpringDocConfiguration
+// import org.springdoc.core.properties.SpringDocConfigProperties
+// import org.springdoc.core.providers.ObjectMapperProvider
+// import org.springframework.context.annotation.Bean
+// import org.springframework.context.annotation.Configuration
 //
 //
-//@Configuration
-//class SpringdocConfigurationOnlyUI {
+// @Configuration
+// class SpringdocConfigurationOnlyUI {
 //    @Bean
 //    fun springDocConfiguration(): SpringDocConfiguration {
 //        return SpringDocConfiguration()
@@ -23,4 +23,5 @@
 //    fun objectMapperProvider(springDocConfigProperties: SpringDocConfigProperties): ObjectMapperProvider {
 //        return ObjectMapperProvider(springDocConfigProperties)
 //    }
-//}
+// }
+class SpringdocConfigurationOnlyUI
