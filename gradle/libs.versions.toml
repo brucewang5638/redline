@@ -70,6 +70,7 @@ jsonschema-validator = { module = "com.networknt:json-schema-validator", version
 # Others
 netty = { module = "io.netty:netty-all", version.ref = "netty" }
 swagger-annotations = { module = "io.swagger.core.v3:swagger-annotations", version.ref = "swagger" }
+swagger-core = { module = "io.swagger.core.v3:swagger-core", version.ref = "swagger" }
 springdoc-openapi-webmvc-ui = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "springdoc-openapi-mvc-ui" }
 springdoc-openapi-ui = { module = "org.springdoc:springdoc-openapi-ui", version.ref = "springdoc-openapi-ui" }
 postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }

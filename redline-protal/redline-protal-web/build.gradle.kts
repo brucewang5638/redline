@@ -6,14 +6,11 @@ plugins {
 dependencies {
     api(libs.spring.boot.starter.web)
     implementation(libs.spring.boot.starter.validation)
-//    implementation(libs.swagger.annotations)
+    implementation(libs.swagger.annotations)
+    implementation(libs.swagger.core)
 //    implementation(libs.springdoc.openapi.ui)
-    implementation(libs.springdoc.openapi.webmvc.ui)
+//    implementation(libs.springdoc.openapi.webmvc.ui)
     implementation(project(":redline-usecase"))
-//    implementation(project(":redline-usecase:redline-usecase-commons"))
-//    implementation(project(":redline-usecase:redline-usecase-user"))
-//    implementation(libs.postgresql)
-//    implementation(libs.spring.boot.starter.data.jpa)
 }
 
 openApiGenerate {
