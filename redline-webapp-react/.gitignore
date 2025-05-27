@@ -23,5 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
+# vite
+.vite/
+
 #generate
 /src/app/core/openapi
