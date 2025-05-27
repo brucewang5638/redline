@@ -20,18 +20,18 @@ import java.time.Instant
 @Table(
     name = "role",
     uniqueConstraints = [
-        UniqueConstraint(columnNames = ["name"])
-    ]
+        UniqueConstraint(columnNames = ["name"]),
+    ],
 )
 class Role(
     @field:NotBlank(message = "UserName is required and cannot be blank")
     @field:Pattern(
         regexp = "^[a-zA-Z0-9_]*\$",
-        message = "User names should contain only letters, numbers and underscores."
+        message = "User names should contain only letters, numbers and underscores.",
     )
     @field:Size(min = 5, max = 50, message = "Name must be between 1 and 50 characters")
-    val name: String
-): AbstractAggregateRoot<Role>() {
+    val name: String,
+) : AbstractAggregateRoot<Role>() {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0

@@ -1,7 +1,7 @@
 plugins {
     id("redline-base")
 }
-dependencies{
+dependencies {
     api(project(":redline-infra:redline-commons"))
     api(project(":redline-infra:redline-db"))
 }

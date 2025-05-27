@@ -1,0 +1,12 @@
+springdoc:
+  api-docs:
+    enabled: false
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    url: /openapi.yaml
+    path: /swagger-ui
+
+#server:
+#  servlet:
+#    context-path: /api/v1

@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate": "openapi-generator-cli generate -i ../redline-protal/redline-protal-web/src/main/resources/static/openapi.yaml -g typescript-fetch -o src/app/core/openapi --additional-properties fileNaming=kebab-case,withInterfaces=true --generate-alias-as-model"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.77.1",

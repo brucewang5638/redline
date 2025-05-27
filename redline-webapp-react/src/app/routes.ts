@@ -15,7 +15,7 @@ const router = createBrowserRouter([
         path: "user",
         children: [
           { index: true, Component: User },
-          { path: ":pid", Component: UserEdit },
+          { path: ":id", Component: UserEdit },
         ],
       },
     ],

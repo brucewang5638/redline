@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import type { FormProps } from "antd";
 import { Button, Checkbox, Form, Input } from "antd";
 import { useQuery } from "@tanstack/react-query";
@@ -20,17 +20,18 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = errorInfo => {
 
 const UserEdit: React.FC = () => {
   let params = useParams();
-
-  console.log("params", params);
-  
+  const [form] = Form.useForm();
 
   const { isPending, error, data } = useQuery({
     queryKey: ["repoData"],
-    queryFn: () => fetch(`/api/user/${params.pid}`).then(res => res.json()),
+    queryFn: () => fetch(`/api/user/${params.id}`).then(res => res.json()),
   });
-  const [form] = Form.useForm();
 
-  form.setFieldsValue({ ...data });
+  useEffect(() => {
+    if (data) {
+      form.setFieldsValue(data);
+    }
+  }, [data, form]); // 依赖 data 变化时更新表单
 
   return (
     <Form

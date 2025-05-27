@@ -1,6 +1,5 @@
 package org.bruwave.redline.usecase.user
 
-
 interface UserService {
     fun createUser(user: UserTO): UserTO
 

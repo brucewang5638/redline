@@ -1,5 +1,6 @@
 plugins {
     id("redline-base")
+    id("org.springframework.boot")
 }
 
 dependencies {

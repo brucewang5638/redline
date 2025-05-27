@@ -1,14 +1,14 @@
 package org.bruwave.redline.usecase.user.impl
 
-import org.bruwave.redline.user.UserRepository
 import org.bruwave.redline.usecase.user.BasicUserTO
 import org.bruwave.redline.usecase.user.UserService
 import org.bruwave.redline.usecase.user.UserTO
+import org.bruwave.redline.user.UserRepository
 import org.springframework.stereotype.Service
 
 @Service
 class UserServiceImpl(
-    private val userRepository: UserRepository
+    private val userRepository: UserRepository,
 ) : UserService {
     override fun createUser(user: UserTO): UserTO {
         TODO("Not yet implemented")
@@ -23,8 +23,10 @@ class UserServiceImpl(
     }
 
     override fun getUser(id: Long): UserTO {
-        val user = userRepository.findById(id)
-            .orElseThrow { RuntimeException("User with id $id not found") }
+        val user =
+            userRepository
+                .findById(id)
+                .orElseThrow { RuntimeException("User with id $id not found") }
 
         return UserTO(
             id = user.id,
@@ -36,7 +38,7 @@ class UserServiceImpl(
             enabled = user.enabled,
             locked = user.locked,
             createdAt = user.createdAt,
-            updatedAt = user.updatedAt
+            updatedAt = user.updatedAt,
         )
     }
 
@@ -44,8 +46,8 @@ class UserServiceImpl(
         TODO("Not yet implemented")
     }
 
-    override fun listUsers(): List<BasicUserTO> {
-        return userRepository.findAll().map {
+    override fun listUsers(): List<BasicUserTO> =
+        userRepository.findAll().map {
             BasicUserTO(
                 id = it.id,
                 name = it.name,
@@ -56,8 +58,7 @@ class UserServiceImpl(
                 enabled = it.enabled,
                 locked = it.locked,
                 createdAt = it.createdAt,
-                updatedAt = it.updatedAt
+                updatedAt = it.updatedAt,
             )
         }
-    }
 }

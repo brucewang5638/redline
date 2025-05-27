@@ -10,7 +10,7 @@ import org.springframework.data.domain.AbstractAggregateRoot
 class Permission(
     val name: String,
     val label: String,
-    val description: String
+    val description: String,
 ) : AbstractAggregateRoot<Permission>() {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

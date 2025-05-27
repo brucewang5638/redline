@@ -4,7 +4,7 @@ group = "org.bruwave.redline"
 version = libsFun.findVersion("redline").orElseThrow(::AssertionError)
 
 plugins {
-    id("org.springframework.boot")
+//    id("org.springframework.boot")
 //    id("io.spring.dependency-management")
     kotlin("jvm")
     kotlin("plugin.spring")

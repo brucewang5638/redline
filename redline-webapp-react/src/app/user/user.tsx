@@ -3,16 +3,10 @@ import { Space, Table, Tag } from "antd";
 import type { TableProps } from "antd";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router";
+import { UserApi, type BasicUser } from "../core/openapi";
 
-interface DataType {
-  id: number;
-  name: string;
-  age: number;
-  address: string;
-  roles: string[];
-}
 
-const columns: TableProps<DataType>["columns"] = [
+const columns: TableProps<BasicUser>["columns"] = [
   {
     title: "Name",
     dataIndex: "username",
@@ -65,16 +59,17 @@ const User: React.FC = () => {
   // const [posts, setPosts] = useState([]);
   // const [loading, setLoading] = useState(true);
 
+  const userapi = new UserApi()
   const { isPending, error, data } = useQuery({
     queryKey: ["repoData"],
-    queryFn: () => fetch("/api/user").then(res => res.json()),
+    queryFn: () => userapi.listUsers().then(res => res),
   });
 
   if (isPending) {
     return <div>Loading...</div>;
   }
 
-  return <Table<DataType> columns={columns} dataSource={data} />;
+  return <Table<BasicUser> columns={columns} dataSource={data} />;
 
   // return (
   //   <div>

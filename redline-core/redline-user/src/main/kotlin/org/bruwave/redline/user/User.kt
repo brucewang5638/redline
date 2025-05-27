@@ -24,17 +24,17 @@ import kotlin.random.Random
 @Table(
     name = "users",
     uniqueConstraints = [
-        UniqueConstraint(columnNames = ["name"])
-    ]
+        UniqueConstraint(columnNames = ["name"]),
+    ],
 )
 class User(
     @field:NotBlank(message = "UserName is required and cannot be blank")
     @field:Pattern(
         regexp = "^[a-zA-Z0-9_]*\$",
-        message = "User names should contain only letters, numbers and underscores."
+        message = "User names should contain only letters, numbers and underscores.",
     )
     @field:Size(min = 5, max = 50, message = "Name must be between 1 and 50 characters")
-    val name: String
+    val name: String,
 ) : AbstractAggregateRoot<User>() {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -118,14 +118,21 @@ class User(
         updatedAt = Instant.now()
     }
 
-    fun updateProfile(sex: Sex, age: Int, nick: String) {
+    fun updateProfile(
+        sex: Sex,
+        age: Int,
+        nick: String,
+    ) {
         this.sex = sex
         this.age = age
         this.nick = nick
         updatedAt = Instant.now()
     }
 
-    fun changePassword(oldPassword: String, newPassword: String) {
+    fun changePassword(
+        oldPassword: String,
+        newPassword: String,
+    ) {
         require(enabled) { "User is not enabled" }
         require(!locked) { "User is locked" }
 
@@ -140,7 +147,6 @@ class User(
         require(!locked) { "User is locked" }
 
         password = Random(8).toString()
-        return password;
+        return password
     }
 }
-

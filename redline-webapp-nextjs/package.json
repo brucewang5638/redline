@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate": "openapi-generator-cli generate -i ../redline-protal/redline-protal-web/src/main/resources/openapi.yaml -g typescript-nestjs -o app/core/openapi --additional-properties fileNaming=kebab-case,withInterfaces=true --generate-alias-as-model"
+    "generate": "openapi-generator-cli generate -i ../redline-protal/redline-protal-web/src/main/resources/static/openapi.yaml -g typescript-nestjs -o app/core/openapi --additional-properties fileNaming=kebab-case,withInterfaces=true --generate-alias-as-model"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.23.0",

@@ -3,15 +3,15 @@ package org.bruwave.redline.commons
 enum class Sex {
     MALE,
     FEMALE,
-    UNKNOWN;
+    UNKNOWN,
+    ;
 
     companion object {
-        fun fromString(value: String): Sex {
-            return when (value) {
+        fun fromString(value: String): Sex =
+            when (value) {
                 "MALE" -> MALE
                 "FEMALE" -> FEMALE
                 else -> UNKNOWN
             }
-        }
     }
 }

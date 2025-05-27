@@ -1,0 +1,19 @@
+{
+  "printWidth": 120,
+  "endOfLine": "lf",
+  "useTabs": false,
+  "singleQuote": false,
+  "arrowParens": "avoid",
+  "semi": true,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "bracketSpacing": true,
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "parser": "angular"
+      }
+    }
+  ]
+}
